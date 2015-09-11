@@ -6,8 +6,8 @@ using namespace std;
 class Row{
 public:
 	Row(int num);
-	vector<double> row;
+	vector<double> container;
 
 	int numValues;
-}
+};
 #endif
