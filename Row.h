@@ -5,9 +5,9 @@ using namespace std;
 
 class Row{
 public:
-	Row(int num);
-	vector<double> container;
+    Row(int num);
+    vector<double> row;
 
-	int numValues;
+    int numValues;
 };
 #endif
