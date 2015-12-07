@@ -21,7 +21,8 @@ public:
     bool operator!=(const Matrix&) const;
     Matrix operator+(const Matrix&) const;
     Matrix operator-(const Matrix&) const;
-    Matrix operator*(const Matrix&) const;
+    Matrix operator*(const Matrix&) const; //matrix multiplication
+    Matrix operator*(const double&) const; //scalar multiplication
 
     const Matrix& operator=(const Matrix&);
 

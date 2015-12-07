@@ -31,7 +31,8 @@ Matrix::Matrix(int row, int col){
 
 Matrix::Matrix(){
 	name = "NULL";
-	getRowColInput();
+	numRows = 0;
+	numCols = 0;
 	initializeMatrix();
 }
 
@@ -139,6 +140,7 @@ Matrix Matrix::operator-(const Matrix& otherMatrix) const{
 	return *this;
 }
 
+//matrix multplication
 Matrix Matrix::operator*(const Matrix& otherMatrix) const{
 	double entryTemp = -1;
 	
@@ -169,6 +171,19 @@ Matrix Matrix::operator*(const Matrix& otherMatrix) const{
 		}
 		return product;
 	}
+}
+
+//scalar multiplication
+Matrix Matrix::operator*(const double& scalar) const{
+	Matrix product(numRows, numCols);
+
+	for (int rowIndex = 0; rowIndex < numRows; rowIndex++){
+		for (int colIndex = 0; colIndex < numCols; colIndex++){
+			product.matrix[rowIndex]->row[colIndex] *= scalar;
+		}
+	}
+
+	return product;
 }
 
 const Matrix& Matrix::operator=(const Matrix& otherMatrix){
